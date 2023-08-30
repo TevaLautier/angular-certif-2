@@ -6,9 +6,12 @@ import { QuizResultGuard } from './quiz-result.guard';
 
 const routes: Routes = [
   { path: '', component: QuizCreatePageComponent },
-  { path: 'result', component: QuizResultPageComponent,canActivate: [QuizResultGuard]},
-  { path: '**', redirectTo:'',pathMatch:'full' },
-
+  {
+    path: 'result',
+    component: QuizResultPageComponent,
+    canActivate: [QuizResultGuard],
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

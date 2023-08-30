@@ -1,6 +1,6 @@
 <form #form="ngForm" class="d-flex gap-3">
   <select
-    #categorySelect
+    id="categorySelect"
     [ngModel]="category"
     [compareWith]="compareCategory"
     name="category"
@@ -10,9 +10,16 @@
       {{ category.name }}
     </option>
   </select>
-  <select #difficultySelect [ngModel]="difficulty" name="difficulty" required>
+  <select
+    id="difficultySelect"
+    [ngModel]="difficulty"
+    name="difficulty"
+    required
+  >
     <option *ngFor="let difficulty of difficulties">{{ difficulty }}</option>
   </select>
 
-  <button (click)="submit(form)" [disabled]="form.invalid">Create</button>
+  <button (click)="submit(form)" [disabled]="form.invalid" id="createBtn">
+    Create
+  </button>
 </form>

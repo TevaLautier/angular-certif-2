@@ -9,13 +9,19 @@ import { QuizResultComponent } from './quiz-result/quiz-result.component';
 import { QuizResultStatComponent } from './quiz-result-stat/quiz-result-stat.component';
 
 @NgModule({
-  declarations: [QuizSelectorComponent, QuizQuestionListComponent, QuizAnswerRadioButtonsComponent, QuizResultComponent, QuizResultStatComponent],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
+  declarations: [
+    QuizSelectorComponent,
+    QuizQuestionListComponent,
+    QuizAnswerRadioButtonsComponent,
+    QuizResultComponent,
+    QuizResultStatComponent,
   ],
-  exports: [QuizSelectorComponent, QuizQuestionListComponent, QuizResultComponent, QuizResultStatComponent],
+  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  exports: [
+    QuizSelectorComponent,
+    QuizQuestionListComponent,
+    QuizResultComponent,
+    QuizResultStatComponent,
+  ],
 })
 export class QuizModule {}

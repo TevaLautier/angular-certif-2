@@ -16,4 +16,8 @@ export class QuizResultPageComponent implements OnInit {
     this.responses=this.quizPageSvc.responses;
   }
 
+  newQuiz(){
+    this.quizPageSvc.newQuiz();
+  }
+
 }

@@ -1,8 +1,16 @@
+
 <app-quiz-selector
   (create)="createQuiz($event)"
   [category]="category"
   [difficulty]="difficulty"
+  [categories]="categories"
+  [difficulties]="difficulties"
 ></app-quiz-selector>
+
+<div *ngIf="quizPageSvc.error" class="bg-error">
+  This selection is not available or the server does not response. Please change
+  your input
+</div>
 
 <app-quiz-question-list
   *ngIf="quizPageSvc.questions"

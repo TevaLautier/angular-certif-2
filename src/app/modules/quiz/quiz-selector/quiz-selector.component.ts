@@ -15,8 +15,9 @@ export class QuizSelectorComponent implements OnInit {
   category?: Category;
   @Input()
   difficulty?: Difficulty;
-
+  @Input()
   categories?: Observable<Category[]>;
+  @Input()
   difficulties?: Difficulty[];
 
   compareCategory = (a: Category, b: Category) => a?.id === b?.id;
@@ -24,8 +25,7 @@ export class QuizSelectorComponent implements OnInit {
   constructor(private quizSvc: QuizService) {}
 
   ngOnInit(): void {
-    this.categories = this.quizSvc.getCategories();
-    this.difficulties = this.quizSvc.getDifficulties();
+
   }
 
   submit(form: NgForm) {

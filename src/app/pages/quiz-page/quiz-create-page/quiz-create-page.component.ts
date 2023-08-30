@@ -1,6 +1,12 @@
-import { Category, Difficulty, Quiz, QuizResponse } from '../../../modules/quiz/quiz.model';
+import {
+  Category,
+  Difficulty,
+  Quiz,
+  QuizResponse,
+} from '../../../modules/quiz/quiz.model';
 import { Component, OnInit } from '@angular/core';
 import { QuizPageService } from '../quiz-page.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-quiz-create-page',
@@ -10,19 +16,24 @@ import { QuizPageService } from '../quiz-page.service';
 export class QuizCreatePageComponent implements OnInit {
   category?: Category;
   difficulty?: Difficulty;
+  categories?: Observable<Category[]>;
+  difficulties?: Difficulty[];
 
-  constructor(protected quizPageSvc: QuizPageService) {}
+  constructor(public quizPageSvc: QuizPageService) {}
 
   ngOnInit(): void {
     this.category = this.quizPageSvc.getPreviousCategory();
     this.difficulty = this.quizPageSvc.getPreviousDifficulty();
+
+    this.categories = this.quizPageSvc.getCategories();
+    this.difficulties = this.quizPageSvc.getDifficulties();
   }
 
   createQuiz(quiz: Quiz) {
     this.quizPageSvc.createQuiz(quiz);
   }
 
-  showResult(questions:QuizResponse[]) {
+  showResult(questions: QuizResponse[]) {
     this.quizPageSvc.showResult(questions);
   }
 }

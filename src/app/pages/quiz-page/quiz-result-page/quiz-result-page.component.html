@@ -1,7 +1,7 @@
 <H1>Results</H1>
 <div class="d-flex flex-column gap-3">
-<app-quiz-result [responses]="responses"></app-quiz-result>
-<app-quiz-result-stat [responses]="responses"></app-quiz-result-stat>
+  <app-quiz-result [responses]="responses"></app-quiz-result>
+  <app-quiz-result-stat [responses]="responses"></app-quiz-result-stat>
 
-<button routerLink="/quiz">Create a new Quiz</button>
+  <button (click)="newQuiz()">Create a new Quiz</button>
 </div>

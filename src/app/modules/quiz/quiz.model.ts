@@ -10,7 +10,7 @@ export class Categories {
 export enum Difficulty {
   EASY = 'easy',
   MEDIUM = 'medium',
-  HARD = 'hard"',
+  HARD = 'hard',
 }
 
 export class Quiz {
@@ -26,6 +26,7 @@ export class OpenTdbQuizQuestion {
   incorrect_answers!: string[];
   correct_answer!: string;
 }
+
 export class QuizQuestion {
   question!: string;
   correctAnswer!: string;

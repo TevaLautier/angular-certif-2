@@ -6,12 +6,9 @@ import { QuizResponse } from '../quiz.model';
   templateUrl: './quiz-result.component.html',
   styleUrls: ['./quiz-result.component.scss'],
 })
-export class QuizResultComponent implements OnInit {
+export class QuizResultComponent {
   @Input()
   responses?: QuizResponse[];
 
   constructor() {}
-
-  ngOnInit(): void {
-  }
 }

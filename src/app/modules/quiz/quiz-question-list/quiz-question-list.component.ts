@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './quiz-question-list.component.html',
   styleUrls: ['./quiz-question-list.component.scss'],
 })
-export class QuizQuestionListComponent implements OnInit {
+export class QuizQuestionListComponent {
   @Input()
   questions?: QuizQuestion[];
   @Output()
@@ -15,10 +15,9 @@ export class QuizQuestionListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
-
   _submit(form: NgForm) {
     this.submit.emit(
+      // transform question to response
       this.questions?.map((q) => {
         const userAnswer = form.controls[q.question].value;
         return { ...q, userAnswer };

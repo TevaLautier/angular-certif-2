@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Category, Difficulty, Quiz, QuizQuestion, QuizResponse } from '../../modules/quiz/quiz.model';
+import {
+  Category,
+  Difficulty,
+  Quiz,
+  QuizQuestion,
+  QuizResponse,
+} from '../../modules/quiz/quiz.model';
 import { QuizService } from '../../modules/quiz/quiz.service';
+import { Observable, catchError, throwError } from 'rxjs';
 
 const STORE_QUIZ = 'previousQuiz';
 
@@ -9,17 +16,34 @@ const STORE_QUIZ = 'previousQuiz';
   providedIn: 'root',
 })
 export class QuizPageService {
-
   questions?: QuizQuestion[];
   responses?: QuizResponse[];
+  error?: Error;
 
-  constructor(private quizSvc: QuizService,private router:Router) {}
+  constructor(private quizSvc: QuizService, private router: Router) {}
+
+  getDifficulties(): Difficulty[] {
+    return this.quizSvc.getDifficulties();
+  }
+
+  getCategories(): Observable<Category[]> {
+    return this.quizSvc.getCategories();
+  }
 
   createQuiz(quiz: Quiz) {
+    this.error = undefined;
     localStorage.setItem(STORE_QUIZ, JSON.stringify(quiz));
-    this.quizSvc.getQuestions(quiz).subscribe((questions) => {
-      this.questions = questions;
-    });
+    this.quizSvc
+      .getQuestions(quiz)
+      .pipe(
+        catchError((error) => {
+          this.error = error;
+          return [];
+        })
+      )
+      .subscribe((questions) => {
+        this.questions = questions;
+      });
   }
 
   getPreviousCategory(): Category | undefined {
@@ -36,8 +60,15 @@ export class QuizPageService {
       : undefined;
   }
 
-  showResult(responses:QuizResponse[]) {
-    this.responses=responses;
-    this.router.navigate(["/quiz/result"]);
+  showResult(responses: QuizResponse[]) {
+    this.responses = responses;
+    this.router.navigate(['/quiz/result']);
+  }
+
+  newQuiz() {
+    //clear previous question
+    this.questions = undefined;
+    // route to another quiz
+    this.router.navigate(['/quiz']);
   }
 }

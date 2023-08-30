@@ -14,6 +14,7 @@ export class QuizResultStatComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // compute nb correct answers
     this.responses?.forEach(r=>{
       if(r.userAnswer===r.correctAnswer){
         this.nbCorrect++;

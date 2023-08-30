@@ -37,7 +37,7 @@ export class QuizService {
         map((response) => {
           // verify response code to see if there is error
           if (response.response_code !== 0) {
-            throw Error('Error on opentdb. Try again ?');
+            throw Error('Error on opentdb');
           } else {
             // else return only the questions
             return response.results.map((question) => {

@@ -6,14 +6,16 @@ import {
   HostBinding,
   EventEmitter,
   Output,
+  Provider,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-const VALUE_ACCESSOR: any = {
+const VALUE_ACCESSOR: Provider = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => QuizAnswerRadioButtonsComponent),
   multi: true,
 };
+
 @Component({
   providers: [VALUE_ACCESSOR],
   selector: 'app-quiz-answer-radio-buttons',
@@ -40,6 +42,7 @@ export class QuizAnswerRadioButtonsComponent implements ControlValueAccessor {
   writeValue(answer: string): void {
     this.selected = answer;
   }
+
   registerOnChange(fn: (value: string | undefined) => void): void {
     this.onChange = fn;
   }
