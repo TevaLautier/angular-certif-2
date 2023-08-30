@@ -8,7 +8,7 @@ import {
   QuizResponse,
 } from '../../modules/quiz/quiz.model';
 import { QuizService } from '../../modules/quiz/quiz.service';
-import { Observable, catchError, of, tap, throwError } from 'rxjs';
+import { Observable, catchError, of, tap } from 'rxjs';
 
 const STORE_QUIZ = 'previousQuiz';
 

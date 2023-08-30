@@ -8,7 +8,7 @@ import {
   Quiz,
   QuizQuestion,
 } from './quiz.model';
-import { Observable, map, mergeMap, throwError, toArray } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

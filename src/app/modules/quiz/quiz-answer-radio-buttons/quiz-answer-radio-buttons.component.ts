@@ -1,13 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  forwardRef,
-  HostBinding,
-  EventEmitter,
-  Output,
-  Provider,
-} from '@angular/core';
+import { Component, Input, forwardRef, Provider } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const VALUE_ACCESSOR: Provider = {
