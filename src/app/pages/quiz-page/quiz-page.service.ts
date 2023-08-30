@@ -8,7 +8,7 @@ import {
   QuizResponse,
 } from '../../modules/quiz/quiz.model';
 import { QuizService } from '../../modules/quiz/quiz.service';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, of, tap, throwError } from 'rxjs';
 
 const STORE_QUIZ = 'previousQuiz';
 
@@ -19,6 +19,7 @@ export class QuizPageService {
   questions?: QuizQuestion[];
   responses?: QuizResponse[];
   error?: Error;
+  categories?: Category[];
 
   constructor(private quizSvc: QuizService, private router: Router) {}
 
@@ -27,7 +28,14 @@ export class QuizPageService {
   }
 
   getCategories(): Observable<Category[]> {
-    return this.quizSvc.getCategories();
+    return this.categories
+      ? of(this.categories)
+      : this.quizSvc.getCategories().pipe(
+          tap((cats) => {
+            // Caching categories for next quiz
+            this.categories = cats;
+          })
+        );
   }
 
   createQuiz(quiz: Quiz) {
