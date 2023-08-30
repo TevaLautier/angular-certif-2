@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizPageService } from '../quiz-page.service';
-import { QuizResponse } from 'src/app/modules/quiz/quiz.model';
+import { QuizResponse } from '../../../modules/quiz/quiz.model';
 
 @Component({
   selector: 'app-quiz-result-page',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Category, Difficulty, Quiz, QuizQuestion, QuizResponse } from 'src/app/modules/quiz/quiz.model';
-import { QuizService } from 'src/app/modules/quiz/quiz.service';
+import { Category, Difficulty, Quiz, QuizQuestion, QuizResponse } from '../../modules/quiz/quiz.model';
+import { QuizService } from '../../modules/quiz/quiz.service';
 
 const STORE_QUIZ = 'previousQuiz';
 

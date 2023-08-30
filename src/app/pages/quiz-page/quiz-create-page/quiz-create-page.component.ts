@@ -1,6 +1,5 @@
-import { Category, Difficulty, Quiz, QuizQuestion, QuizResponse } from 'src/app/modules/quiz/quiz.model';
+import { Category, Difficulty, Quiz, QuizResponse } from '../../../modules/quiz/quiz.model';
 import { Component, OnInit } from '@angular/core';
-import { QuizService } from 'src/app/modules/quiz/quiz.service';
 import { QuizPageService } from '../quiz-page.service';
 
 @Component({
