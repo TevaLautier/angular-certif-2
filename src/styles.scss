@@ -15,13 +15,27 @@
 .flex-column {
   flex-direction: column;
 }
-.flex-wrap{
-  flex-wrap:wrap;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 .gap-3 {
   gap: 1rem;
 }
 
+button {
+  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  border:1px solid transparent;
+  border-radius:.3em;
+  color:white;
+  padding: 0.3em 1em;
+  &:hover{
+    border-color: var(--color-primary)
+  }
+}
 
 .bg-error {
   background-color: var(--color-error);
