@@ -24,7 +24,7 @@ export class QuizAnswerRadioButtonsComponent implements ControlValueAccessor {
 
   constructor() {}
 
-  selectAnswer(answer: string) {
+  selectAnswer(answer: string): void {
     this.selected = answer;
     this.onChange(this.selected);
     this.onTouched();

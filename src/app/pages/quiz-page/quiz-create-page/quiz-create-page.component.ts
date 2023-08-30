@@ -29,11 +29,11 @@ export class QuizCreatePageComponent implements OnInit {
     this.difficulties = this.quizPageSvc.getDifficulties();
   }
 
-  createQuiz(quiz: Quiz) {
+  createQuiz(quiz: Quiz): void {
     this.quizPageSvc.createQuiz(quiz);
   }
 
-  showResult(questions: QuizResponse[]) {
+  showResult(questions: QuizResponse[]): void {
     this.quizPageSvc.showResult(questions);
   }
 }

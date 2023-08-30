@@ -26,7 +26,7 @@ export class QuizSelectorComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  submit(form: NgForm) {
+  submit(form: NgForm): void {
     const { category, difficulty } = form.value;
     this.create.emit({
       category,

@@ -15,7 +15,7 @@ export class QuizQuestionListComponent {
 
   constructor() {}
 
-  _submit(form: NgForm) {
+  _submit(form: NgForm): void {
     this.submit.emit(
       // transform question to response
       this.questions?.map((q) => {

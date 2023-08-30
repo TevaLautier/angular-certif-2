@@ -38,7 +38,7 @@ export class QuizPageService {
         );
   }
 
-  createQuiz(quiz: Quiz) {
+  createQuiz(quiz: Quiz): void {
     this.error = undefined;
     localStorage.setItem(STORE_QUIZ, JSON.stringify(quiz));
     this.quizSvc
@@ -68,12 +68,12 @@ export class QuizPageService {
       : undefined;
   }
 
-  showResult(responses: QuizResponse[]) {
+  showResult(responses: QuizResponse[]): void {
     this.responses = responses;
     this.router.navigate(['/quiz/result']);
   }
 
-  newQuiz() {
+  newQuiz(): void {
     //clear previous question
     this.questions = undefined;
     // route to another quiz
