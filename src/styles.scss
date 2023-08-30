@@ -12,13 +12,16 @@
   justify-content: center;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap{
+  flex-wrap:wrap;
+}
 .gap-3 {
   gap: 1rem;
 }
 
-.flex-column {
-  flex-direction: column;
-}
 
 .bg-error {
   background-color: var(--color-error);

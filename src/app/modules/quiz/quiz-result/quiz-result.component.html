@@ -1,7 +1,7 @@
 <div class="d-flex flex-column gap-3" *ngIf="responses">
   <div *ngFor="let response of responses">
     <p [innerHTML]="response.question"></p>
-    <div class="d-flex gap-3">
+    <div class="d-flex gap-3 flex-wrap">
       <div
         class="q-answer"
         [ngClass]="{

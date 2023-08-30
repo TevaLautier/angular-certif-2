@@ -1,6 +1,7 @@
 :host {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 
   .q-answer {
     cursor: pointer;
