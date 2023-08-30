@@ -1,5 +1,6 @@
 :root {
   --color-primary: #080;
+  --color-secondary: #008;
   --color-error: #f66;
   --color-warn: #ff6;
   --color-success: #6f6;
@@ -29,13 +30,13 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border:1px solid transparent;
   border-radius:.3em;
   color:white;
   padding: 0.7em 2em;
   &:hover{
-    border-color: var(--color-primary)
+    border-color: var(--color-secondary)
   }
 }
 
@@ -55,7 +56,7 @@ select {
 .q-answer {
   border: 1px solid var(--color-primary);
   transition: all 0.3s ease-in;
-  border-radius: 1rem;
+  border-radius: .5rem;
   padding: 0.5rem 1rem;
   &.selected {
     background-color: var(--color-primary);
