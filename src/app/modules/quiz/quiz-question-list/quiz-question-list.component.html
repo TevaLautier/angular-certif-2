@@ -1,0 +1,15 @@
+<form #form="ngForm" class="d-flex flex-column gap-3">
+  <div *ngFor="let question of questions">
+    <p [innerHTML]="question.question"></p>
+
+    <app-quiz-answer-radio-buttons
+      [ngModel]
+      [name]="question.question"
+      [answers]="question.randomAnswers"
+      required
+    ></app-quiz-answer-radio-buttons>
+  </div>
+  <div class="d-flex flex-center">
+    <button (click)="_submit(form)" [hidden]="form.invalid">Submit</button>
+  </div>
+</form>

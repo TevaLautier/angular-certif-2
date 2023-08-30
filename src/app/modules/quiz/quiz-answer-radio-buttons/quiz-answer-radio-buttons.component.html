@@ -1,0 +1,7 @@
+<div
+  class="q-answer"
+  [ngClass]="{ selected: selected === answer }"
+  *ngFor="let answer of answers"
+  (click)="selectAnswer(answer)"
+  [innerHTML]="answer"
+></div>

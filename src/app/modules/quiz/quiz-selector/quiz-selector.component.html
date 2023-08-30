@@ -1,0 +1,18 @@
+<form #form="ngForm" class="d-flex gap-3">
+  <select
+    #categorySelect
+    [ngModel]="category"
+    [compareWith]="compareCategory"
+    name="category"
+    required
+  >
+    <option *ngFor="let category of categories | async" [ngValue]="category">
+      {{ category.name }}
+    </option>
+  </select>
+  <select #difficultySelect [ngModel]="difficulty" name="difficulty" required>
+    <option *ngFor="let difficulty of difficulties">{{ difficulty }}</option>
+  </select>
+
+  <button (click)="submit(form)" [disabled]="form.invalid">Create</button>
+</form>

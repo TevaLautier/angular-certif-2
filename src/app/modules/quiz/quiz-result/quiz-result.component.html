@@ -1,0 +1,17 @@
+<div class="d-flex flex-column gap-3" *ngIf="responses">
+  <div *ngFor="let response of responses">
+    <p [innerHTML]="response.question"></p>
+    <div class="d-flex gap-3">
+      <div
+        class="q-answer"
+        [ngClass]="{
+          selected: response.correctAnswer === answer,
+          incorrect:
+            response.correctAnswer !== answer && answer === response.userAnswer
+        }"
+        *ngFor="let answer of response.randomAnswers"
+        [innerHTML]="answer"
+      ></div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #080;
+  --color-error: #f66;
+  --color-warn: #ff6;
+  --color-success: #6f6;
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.bg-error {
+  background-color: var(--color-error);
+}
+.bg-warn {
+  background-color: var(--color-warn);
+}
+.bg-success {
+  background-color: var(--color-success);
+}
+
+select {
+  padding: 0.5rem;
+}
+.q-answer {
+  border: 1px solid var(--color-primary);
+  transition: all 0.3s ease-in;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  &.selected {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}

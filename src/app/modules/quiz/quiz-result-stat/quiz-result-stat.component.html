@@ -1,0 +1,9 @@
+<div
+  [ngClass]="{
+    'bg-error': nbCorrect <= 1,
+    'bg-warn': nbCorrect >= 2 && nbCorrect <= 3,
+    'bg-success': nbCorrect >= 4
+  }"
+>
+  You scored {{ nbCorrect }} out of {{ responses?.length }}
+</div>

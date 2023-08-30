@@ -1,0 +1,11 @@
+<app-quiz-selector
+  (create)="createQuiz($event)"
+  [category]="category"
+  [difficulty]="difficulty"
+></app-quiz-selector>
+
+<app-quiz-question-list
+  *ngIf="quizPageSvc.questions"
+  [questions]="quizPageSvc.questions"
+  (submit)="showResult($event)"
+></app-quiz-question-list>

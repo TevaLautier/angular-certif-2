@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  gap: 1rem;
+
+  .q-answer {
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-primary);
+      color: white;
+    }
+  }
+}
